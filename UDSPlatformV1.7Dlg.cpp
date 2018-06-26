@@ -3017,7 +3017,41 @@ void CUDSPlatformV17Dlg::On32793()
 void CUDSPlatformV17Dlg::On32790()
 {
 	// TODO: 在此添加命令处理程序代码
-	MessageBox(_T("OFD2"));
+	if (m_vcFileName.size()>0)
+	{
+		std::vector<CString>::iterator tem_itIndex;
+		std::vector<CString>::iterator tem_itIndex2;
+		for (tem_itIndex=m_vcFileName.begin(), tem_itIndex2=m_vcBussPath.begin(); tem_itIndex!=m_vcFileName.end(); tem_itIndex++,tem_itIndex2++)
+		{
+			CString   tem_strName     = *tem_itIndex;
+			CString   tem_strPath     = *tem_itIndex2;
+			//判断是否为图像文件
+			CString  strMiddle = tem_strPath;
+			int      nIndex    = strMiddle.ReverseFind('.');
+			if (nIndex != -1)
+			{
+				strMiddle = strMiddle.Mid(nIndex+1);
+				strMiddle.MakeLower();
+				if (strMiddle == _T("jpg") || strMiddle == _T("jpeg")||
+					strMiddle == _T("tif") || strMiddle == _T("tiff")||
+					strMiddle == _T("bmp") || strMiddle == _T("png") )	
+				{
+					g_vcCtrlName.push_back(tem_strName);
+					g_vcCtrlPath.push_back(tem_strPath);
+				}
+			}	
+		}
+		if (g_vcCtrlName.size()>0)
+		{
+			m_dlgOutpath.m_BPdfTif = FALSE;
+			m_dlgOutpath.m_BOFD = TRUE;
+			m_dlgOutpath.DoModal();
+
+			//清空vector容器
+			g_vcCtrlName.clear();
+			g_vcCtrlPath.clear();
+		}	
+	}	
 }
 
 
