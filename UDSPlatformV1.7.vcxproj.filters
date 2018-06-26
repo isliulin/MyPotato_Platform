@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\UDSPlatformV17.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\UDSPlatformV1.7.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\desk.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\disk_n.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\disk_s.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\doc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\mydoc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\BK.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\拍摄仪.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\扫描仪.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\身份证.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\图像导出.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\画笔.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\右旋.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\左旋.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\搜索.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\删除.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\上一页.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\下一页.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\BK2.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\导出.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\删减.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\退出.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\增加.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\浏览.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\读卡.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\浏览2.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\上手.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\向上.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\向下.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\font1.bin">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\font2.bin">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\pub\OCR-B 10 BT.ttf" />
+    <None Include="..\release\pub\font1.bin">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\sort.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Release\res\finger.png">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UDSPlatformV1.7.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSPlatformV1.7Dlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSSUBRECARD.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HSMenu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HSMenuPro.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HSMenuX.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HSGraphics.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSSUBOUTPUT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellContextMenu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Public.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PngButton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSSUBRENAME.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSSUBMERGE.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSSUBHELP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSNewNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSACK.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UDSResizeImg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CardReader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="termb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ID_Fpr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UDSPlatformV1.7.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSPlatformV1.7Dlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSSUBRECARD.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HSMenu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HSMenuPro.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HSMenuX.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HSGraphics.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSSUBOUTPUT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellContextMenu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Public.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PngButton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSSUBRENAME.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSSUBMERGE.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSSUBHELP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSNewNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSACK.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UDSResizeImg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CTermbReader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="termb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Common.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ID_Fpr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UDSPlatformV1.7.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

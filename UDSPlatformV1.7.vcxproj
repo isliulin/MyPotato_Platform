@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FDB60B4D-C3E1-4B3B-8E24-1A2DBB2F15C3}</ProjectGuid>
+    <RootNamespace>UDSPlatformV17</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\Release\pub\include;..\Release\pub\finger;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Release\pub\lib;..\Release\pub\finger;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>cximage.lib;pdflib.lib;GdiPlus.lib;ID_FprCap.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\release\pub\font1.bin" />
+    <None Include="..\Release\pub\OCR-B 10 BT.ttf" />
+    <None Include="..\Release\res\BK.png" />
+    <None Include="..\Release\res\BK2.png" />
+    <None Include="..\Release\res\finger.png" />
+    <None Include="..\Release\res\sort.png" />
+    <None Include="..\Release\res\上一页.png" />
+    <None Include="..\Release\res\上手.png" />
+    <None Include="..\Release\res\下一页.png" />
+    <None Include="..\Release\res\删减.png" />
+    <None Include="..\Release\res\删除.png" />
+    <None Include="..\Release\res\右旋.png" />
+    <None Include="..\Release\res\向上.png" />
+    <None Include="..\Release\res\向下.png" />
+    <None Include="..\Release\res\图像导出.png" />
+    <None Include="..\Release\res\增加.png" />
+    <None Include="..\Release\res\导出.png" />
+    <None Include="..\Release\res\左旋.png" />
+    <None Include="..\Release\res\扫描仪.png" />
+    <None Include="..\Release\res\拍摄仪.png" />
+    <None Include="..\Release\res\搜索.png" />
+    <None Include="..\Release\res\浏览.png" />
+    <None Include="..\Release\res\浏览2.png" />
+    <None Include="..\Release\res\画笔.png" />
+    <None Include="..\Release\res\读卡.png" />
+    <None Include="..\Release\res\身份证.png" />
+    <None Include="..\Release\res\退出.png" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\desk.ico" />
+    <None Include="res\disk_n.ico" />
+    <None Include="res\disk_s.ico" />
+    <None Include="res\doc.ico" />
+    <None Include="res\font1.bin" />
+    <None Include="res\font2.bin" />
+    <None Include="res\mydoc.ico" />
+    <None Include="res\UDSPlatformV1.7.ico" />
+    <None Include="res\UDSPlatformV17.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CardReader.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="HSGraphics.h" />
+    <ClInclude Include="HSMenu.h" />
+    <ClInclude Include="HSMenuPro.h" />
+    <ClInclude Include="HSMenuX.h" />
+    <ClInclude Include="ID_Fpr.h" />
+    <ClInclude Include="PngButton.h" />
+    <ClInclude Include="Public.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ShellContextMenu.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="termb.h" />
+    <ClInclude Include="UDSACK.h" />
+    <ClInclude Include="UDSNewNode.h" />
+    <ClInclude Include="UDSPlatformV1.7.h" />
+    <ClInclude Include="UDSPlatformV1.7Dlg.h" />
+    <ClInclude Include="UDSResizeImg.h" />
+    <ClInclude Include="UDSSUBHELP.h" />
+    <ClInclude Include="UDSSUBMERGE.h" />
+    <ClInclude Include="UDSSUBOUTPUT.h" />
+    <ClInclude Include="UDSSUBRECARD.h" />
+    <ClInclude Include="UDSSUBRENAME.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="CTermbReader.cpp" />
+    <ClCompile Include="HSGraphics.cpp" />
+    <ClCompile Include="HSMenu.cpp" />
+    <ClCompile Include="HSMenuPro.cpp" />
+    <ClCompile Include="HSMenuX.cpp" />
+    <ClCompile Include="ID_Fpr.cpp" />
+    <ClCompile Include="PngButton.cpp" />
+    <ClCompile Include="Public.cpp" />
+    <ClCompile Include="ShellContextMenu.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="termb.cpp" />
+    <ClCompile Include="UDSACK.cpp" />
+    <ClCompile Include="UDSNewNode.cpp" />
+    <ClCompile Include="UDSPlatformV1.7.cpp" />
+    <ClCompile Include="UDSPlatformV1.7Dlg.cpp" />
+    <ClCompile Include="UDSResizeImg.cpp" />
+    <ClCompile Include="UDSSUBHELP.cpp" />
+    <ClCompile Include="UDSSUBMERGE.cpp" />
+    <ClCompile Include="UDSSUBOUTPUT.cpp" />
+    <ClCompile Include="UDSSUBRECARD.cpp" />
+    <ClCompile Include="UDSSUBRENAME.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UDSPlatformV1.7.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="UDSPlatformV1.7.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
