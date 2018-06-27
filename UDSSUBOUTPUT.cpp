@@ -676,19 +676,24 @@ CString CUDSSUBOUTPUT::Self_GenerateOFD(vector<CString> imgspath, CString dstpat
 {
 	if (imgspath.size()>0)
 	{
-		CString tem_strFilesPath = _T("0");
+		CString tem_strFilesPath = _T("\"");
+		tem_strFilesPath += _T("0");
+		tem_strFilesPath += _T("\"");
 		tem_strFilesPath += _T(" ");
 		//消除dstpath空格
-		dstpath.Replace(' ', NULL);
+		tem_strFilesPath += _T("\"");
 		tem_strFilesPath += dstpath;
+		tem_strFilesPath += _T("\"");
 		std::vector<CString>::iterator  item_Path;
 		for (item_Path=g_vcCtrlPath.begin(); item_Path!=g_vcCtrlPath.end(); item_Path++)
 		{
 			CString   tem_strFilePath = *item_Path;
 			//消除tem_strFilePath空格
-			tem_strFilePath.Replace(' ', NULL);
+// 			tem_strFilePath.Replace(_T(" "), _T(""));
 			tem_strFilesPath += _T(" ");
+			tem_strFilesPath += _T("\"");
 			tem_strFilesPath += tem_strFilePath;	
+			tem_strFilesPath += _T("\"");
 		}	
 
 		//调用exe生成ofd
@@ -699,6 +704,10 @@ CString CUDSSUBOUTPUT::Self_GenerateOFD(vector<CString> imgspath, CString dstpat
 		tem_Info.lpVerb = _T("Open");
 		tem_Info.lpFile = _T("editor.exe");
 
+		//去除路径中的空格
+//		CString tem_strFilesPath2 = _T("\"");
+//		tem_strFilesPath2 += tem_strFilesPath;
+//		tem_strFilesPath2 += _T("\"");
 		//输入、输出文件路径-----------------------------------------------------
 		tem_Info.lpParameters = tem_strFilesPath;
 
