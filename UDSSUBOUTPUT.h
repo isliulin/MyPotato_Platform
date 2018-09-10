@@ -70,4 +70,8 @@ public:
 	CPngButton    m_btnDown;
 	CPngButton    m_btnUp;
 	CString Self_GenerateOFD(vector<CString> imgspath, CString dstpath);
+	void Self_ShowImg(CString imgpath);
+
+	//显示首幅图像，标志位
+	BOOL m_BFirstOpen;
 };

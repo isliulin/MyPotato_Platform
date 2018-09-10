@@ -131,4 +131,5 @@ public:
 	float Self_ExMatchFeatures(CString imgpath, CString datpath);
 	afx_msg void OnClose();
 	CPngButton m_btnReadFinger;
+	afx_msg void OnBnClickedBtnTestdiffer();
 };

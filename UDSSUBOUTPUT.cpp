@@ -5,6 +5,7 @@
 #include "UDSPlatformV1.7.h"
 #include "UDSSUBOUTPUT.h"
 #include "afxdialogex.h"
+#include "ximage.h"
 
 
 extern std::vector<CString>   g_vcCtrlName;
@@ -78,6 +79,7 @@ BOOL CUDSSUBOUTPUT::OnInitDialog()
 	m_nSlctFile  = -1;
 	m_nDragIndex = -1;
 	m_BOutput    = FALSE;
+	m_BFirstOpen = TRUE;
 
 	//2、ListCtrl初始化--------------------------------------------
 	DWORD    dwStyle;
@@ -161,7 +163,6 @@ BOOL CUDSSUBOUTPUT::OnInitDialog()
 
 
 
-
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常: OCX 属性页应返回 FALSE
 }
@@ -171,6 +172,16 @@ void CUDSSUBOUTPUT::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
 	// TODO: 在此处添加消息处理程序代码
+	//1、取出第一幅图像，并显示---------------------------------------
+	if (m_BFirstOpen)
+	{
+		CString tem_strFirstImg = g_vcCtrlPath[0];
+		Self_ShowImg(tem_strFirstImg);
+		m_BFirstOpen = FALSE;
+	}
+	
+
+
 	/*
 	CDC*      pDC = &dc;
 	CDC       dcMem;
@@ -552,6 +563,8 @@ void CUDSSUBOUTPUT::OnClickListFiles(NMHDR *pNMHDR, LRESULT *pResult)
 	if (tem_nItemIndex>=0 && tem_nItemIndex<m_conListFiles.GetItemCount())
 	{
 		m_nSlctFile = tem_nItemIndex;
+		CString tem_strSlcImg = g_vcCtrlPath[tem_nItemIndex];
+		Self_ShowImg(tem_strSlcImg);
 	}
 	else
 	{
@@ -725,4 +738,67 @@ CString CUDSSUBOUTPUT::Self_GenerateOFD(vector<CString> imgspath, CString dstpat
 	}
 	
 	return dstpath;
+}
+
+
+void CUDSSUBOUTPUT::Self_ShowImg(CString imgpath)
+{
+	//1、清空图像背景
+
+	//2、加载图像
+	CxImage* pImage;
+	pImage = new CxImage;
+	pImage->Load(imgpath);
+	int tem_nCx = pImage->GetWidth();
+	int tem_nCy = pImage->GetHeight();
+	int tem_nNewCx = 0;
+	int tem_nNewCy = 0;
+
+	//3、缩放图像
+	CRect tem_rtPicCtrl;
+	GetDlgItem(IDC_STA_OUTPATHIMG)->GetWindowRect(&tem_rtPicCtrl);
+	ScreenToClient(&tem_rtPicCtrl);
+
+	if (tem_nCx<=tem_rtPicCtrl.Width() && tem_nCy<=tem_rtPicCtrl.Height())
+	{
+		//图像尺寸小于控件尺寸
+		tem_nNewCx = tem_nCx;
+		tem_nNewCy = tem_nCy;
+
+	}
+	else
+	{
+		float tem_fImgRatio = (float)tem_nCx*1.0/tem_nCy*1.0;
+		float tem_fCrtRatio = (float)tem_rtPicCtrl.Width()*1.0/tem_rtPicCtrl.Height()*1.0;
+		if (tem_fImgRatio>tem_fCrtRatio)
+		{
+			tem_nNewCx = tem_rtPicCtrl.Width();
+			tem_nNewCy = (int)((tem_rtPicCtrl.Width()*1.0/tem_nCx)*tem_nCy);
+		}
+		else
+		{
+			tem_nNewCy = tem_rtPicCtrl.Height();
+			tem_nNewCx = (int)((tem_rtPicCtrl.Height()*1.0/tem_nCy)*tem_nCx);
+		}
+		pImage->Resample(tem_nNewCx, tem_nNewCy);
+	}
+
+	CWnd*  pWnd = NULL;
+	pWnd = GetDlgItem(IDC_STA_OUTPATHIMG);
+	CDC*   pDC;
+	pDC = pWnd->GetDC();
+
+	CDC        imageDC;
+	imageDC.CreateCompatibleDC(pDC);
+	HBITMAP   m_hBitmap;
+	m_hBitmap = pImage->MakeBitmap(imageDC);
+	CBitmap m_bmp;
+	m_bmp.Attach(m_hBitmap);
+	imageDC.SelectObject(&m_bmp);
+
+	//显示缩略图
+	int offsetx = (tem_rtPicCtrl.Width()-tem_nNewCx)/2;
+	int offsety = (tem_rtPicCtrl.Height()-tem_nNewCy)/2;
+	pDC->FillSolidRect(0, 0, tem_rtPicCtrl.Width(), tem_rtPicCtrl.Height(), RGB(240,240,240));
+	pDC->BitBlt(offsetx, offsety, tem_nNewCx, tem_nNewCy, &imageDC, 0, 0, SRCCOPY);
 }

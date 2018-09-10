@@ -74,6 +74,7 @@ BEGIN_MESSAGE_MAP(CUDSSUBRECARD, CDialogEx)
 	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLID_PERIOD, &CUDSSUBRECARD::OnCustomdrawSlidPeriod)
 	ON_BN_CLICKED(IDC_BTN_FINGER, &CUDSSUBRECARD::OnBnClickedBtnFinger)
 	ON_WM_CLOSE()
+	ON_BN_CLICKED(IDC_BTN_TESTDIFFER, &CUDSSUBRECARD::OnBnClickedBtnTestdiffer)
 END_MESSAGE_MAP()
 
 
@@ -1074,6 +1075,8 @@ void CUDSSUBRECARD::OnBnClickedBtnFinger()
 	tem_strDatPath    += m_editCardnum;
 	tem_strDatPath    += _T(".dat");
 
+//	tem_strImgPath = _T("C:\\Users\\Administrator\\Desktop\\FingerInfo\\big.bmp");
+//	tem_strImgPath = _T("C:\\Users\\Administrator\\Desktop\\FingerInfo\\small.bmp");
 	//1¡¢»ñÈ¡²¢ÏÔÊ¾Ö¸ÎÆÐÅÏ¢
 	Self_ReadFigerPrint(tem_strImgPath);
 
@@ -1161,6 +1164,8 @@ BYTE g_FPBmpData[BMP_HEAD_SIZE + FPRIMG_MAX_SIZE];          //bmpÍ¼ÏñÊý¾ÝÖ¸Õë£¬Ó
 BYTE g_FPBmpDataTemp[360*256];                              //bmpÍ¼ÏñÊý¾ÝÖ¸Õë£¬ÓÃÓÚÌØÕ÷ÌáÈ¡
 CString CUDSSUBRECARD::Self_ReadFigerPrint(CString imgpath)
 {
+	
+	//1¡¢»ñÈ¡²¢×ª»»ÎªbmpÍ¼Ïñ----------------------------------------------------------------
 	if (LIVESCAN_Init() == LIVESCAN_SUCCESS)
 	{
 		int  tem_nRC = LIVESCAN_GetCaptWindow(0, &m_nOriX, &m_nOriY, &m_nWidth, &m_nHeight);
@@ -1199,6 +1204,9 @@ CString CUDSSUBRECARD::Self_ReadFigerPrint(CString imgpath)
 				return _T("");
 			}	
 		}
+
+		
+		//2¡¢ÏÔÊ¾bmpÍ¼Ïñ-------------------------------------------------------------------
 		Self_ShowFingerImg(imgpath);
 		LoadDll();
 		tem_nRC = FP_Begin();
@@ -1209,6 +1217,8 @@ CString CUDSSUBRECARD::Self_ReadFigerPrint(CString imgpath)
 		tem_nRC = FP_End();
 		FreeDll();
 	}
+	
+//	Self_ShowFingerImg(imgpath);
 	return imgpath;
 }
 
@@ -1369,6 +1379,12 @@ float CUDSSUBRECARD::Self_ExMatchFeatures(CString imgpath, CString datpath)
 	return tem_fMaxValue;
 }
 
+//²âÊÔ²»Í¬Ö¸ÎÆ²É¼¯Æ÷ÊÇ·ñÄÜ¹»Í¨ÓÃ
+void CUDSSUBRECARD::OnBnClickedBtnTestdiffer()
+{
+	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼þÍ¨Öª´¦Àí³ÌÐò´úÂë
+}
+
 
 void CUDSSUBRECARD::OnClose()
 {
@@ -1438,3 +1454,4 @@ void CUDSSUBRECARD::OnClose()
 
 	CDialogEx::OnClose();
 }
+
